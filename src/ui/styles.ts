@@ -144,7 +144,7 @@ export function getStyles(theme: "light" | "dark"): string {
       cursor: crosshair;
     }
 
-    /* ── Toolbar (always dark — sits on the dark annotation overlay) ── */
+    /* ── Toolbar ── */
     .calda-toolbar {
       position: fixed;
       bottom: 16px;
@@ -154,10 +154,10 @@ export function getStyles(theme: "light" | "dark"): string {
       align-items: center;
       gap: 17px;
       padding: 8px;
-      background: #1e293b;
-      border: 1px solid #334155;
+      background: ${isDark ? "#1e293b" : "#ffffff"};
+      border: 1px solid ${border};
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 12px ${isDark ? "rgba(0,0,0,0.4)" : "rgba(0,0,0,0.15)"};
       cursor: grab;
       user-select: none;
       z-index: 2147483647;
@@ -182,7 +182,7 @@ export function getStyles(theme: "light" | "dark"): string {
     .calda-toolbar-divider {
       width: 1px;
       height: 30px;
-      background: #334155;
+      background: ${border};
       flex-shrink: 0;
     }
 
@@ -193,7 +193,7 @@ export function getStyles(theme: "light" | "dark"): string {
       padding: 0;
       border: none;
       background: none;
-      color: #e2e8f0;
+      color: ${isDark ? "#e2e8f0" : "#334155"};
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -207,7 +207,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
     .calda-toolbar-icon-btn.active {
       opacity: 1;
-      color: #f8fafc;
+      color: ${accentFg};
     }
     .calda-toolbar-icon-btn svg {
       pointer-events: none;
@@ -226,7 +226,7 @@ export function getStyles(theme: "light" | "dark"): string {
       padding: 0 20px;
       border: none;
       background: none;
-      color: #e2e8f0;
+      color: ${isDark ? "#e2e8f0" : "#334155"};
       font-size: 14px;
       line-height: 20px;
       cursor: pointer;
@@ -240,7 +240,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
     .calda-toolbar-draw-label.active {
       opacity: 1;
-      color: #f8fafc;
+      color: ${accentFg};
     }
 
     /* Color swatches wrapper */
@@ -264,17 +264,17 @@ export function getStyles(theme: "light" | "dark"): string {
       transform: scale(1.15);
     }
     .calda-color-swatch.active {
-      border-color: #e2e8f0;
+      border-color: ${isDark ? "#e2e8f0" : "#334155"};
     }
 
     /* Cancel button */
     .calda-toolbar-cancel {
       width: 77px;
       padding: 10px;
-      border: 1px solid #334155;
+      border: 1px solid ${border};
       border-radius: 6px;
-      background: #1e293b;
-      color: #e2e8f0;
+      background: ${isDark ? "#1e293b" : "#ffffff"};
+      color: ${fg};
       font-size: 14px;
       line-height: 20px;
       cursor: pointer;
@@ -284,7 +284,7 @@ export function getStyles(theme: "light" | "dark"): string {
       transition: background 0.1s;
     }
     .calda-toolbar-cancel:hover {
-      background: #334155;
+      background: ${bgHover};
     }
 
     /* Report button */
@@ -293,8 +293,8 @@ export function getStyles(theme: "light" | "dark"): string {
       padding: 10px;
       border: none;
       border-radius: 6px;
-      background: #e2e8f0;
-      color: #0f172a;
+      background: ${primaryBg};
+      color: ${primaryFg};
       font-size: 14px;
       line-height: 20px;
       cursor: pointer;

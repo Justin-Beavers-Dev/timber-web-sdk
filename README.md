@@ -18,17 +18,36 @@ Bug reporting widget for web applications. Adds a floating button that lets user
 
 ### 1. Install
 
+Install directly from the public GitHub repo:
+
 ```bash
-npm install calda-feedback-sdk
+npm install github:Justin-Beavers-Dev/timber-web-sdk
+```
+
+To pin a specific commit or tag:
+
+```bash
+npm install github:Justin-Beavers-Dev/timber-web-sdk#main
+npm install github:Justin-Beavers-Dev/timber-web-sdk#v0.1.0
+```
+
+Or add it to your `package.json` manually:
+
+```json
+{
+  "dependencies": {
+    "calda-feedback-sdk": "github:Justin-Beavers-Dev/timber-web-sdk"
+  }
+}
 ```
 
 For local development against the SDK source:
 
 ```bash
-# From the SDK repo
+# From the SDK repo — build and pack
 npm run build && npm pack
 
-# From your web app
+# From your web app — install the local tarball
 npm install ../timber-web-sdk/calda-feedback-sdk-0.1.0.tgz
 ```
 

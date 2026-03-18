@@ -32,14 +32,14 @@ export async function captureScreenshot(apiUrl: string): Promise<string> {
   // 2. Clone the entire document element
   const clone = document.documentElement.cloneNode(true) as HTMLElement;
 
-  // 3. Remove SDK elements (anything with data-calda-root)
-  clone.querySelectorAll("[data-calda-root]").forEach((el) => el.remove());
+  // 3. Remove SDK elements (anything with data-timber-root)
+  clone.querySelectorAll("[data-timber-root]").forEach((el) => el.remove());
 
   // 4. Remove all <script> tags
   clone.querySelectorAll("script").forEach((el) => el.remove());
 
-  // 5. Mask elements with [data-calda-mask]
-  clone.querySelectorAll("[data-calda-mask]").forEach((el) => {
+  // 5. Mask elements with [data-timber-mask]
+  clone.querySelectorAll("[data-timber-mask]").forEach((el) => {
     el.textContent = "[masked]";
   });
 

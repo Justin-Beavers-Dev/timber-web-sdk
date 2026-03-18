@@ -11,7 +11,7 @@ export function createFloatButton(
   opts: FloatButtonOptions
 ): HTMLButtonElement {
   const btn = document.createElement("button");
-  btn.className = "calda-float-btn";
+  btn.className = "timber-float-btn";
   const img = document.createElement("img");
   img.src = logoUrl;
   img.alt = "Report a bug";

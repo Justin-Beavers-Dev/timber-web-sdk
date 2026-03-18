@@ -10,7 +10,7 @@ Bug reporting widget for web applications. Adds a floating button that lets user
 - **Bug report form** — title, description, expected behaviour, priority, device info
 - **Console log capture** — silently records the last 200 console/click events and attaches them to the report
 - **Backend integration** — submits reports to the Timber API (`/api/v1/sdk/ingest`) using an SDK API key
-- **Privacy** — `[data-calda-mask]` attribute redacts sensitive content from screenshots
+- **Privacy** — `[data-timber-mask]` attribute redacts sensitive content from screenshots
 - **Framework-agnostic** — works with React, Next.js, Vue, Svelte, plain HTML, etc.
 - **Style isolation** — all UI renders inside a Shadow DOM so it never conflicts with the host app
 
@@ -36,7 +36,7 @@ Or add it to your `package.json` manually:
 ```json
 {
   "dependencies": {
-    "calda-feedback-sdk": "github:Justin-Beavers-Dev/timber-web-sdk"
+    "timber-feedback-sdk": "github:Justin-Beavers-Dev/timber-web-sdk"
   }
 }
 ```
@@ -48,7 +48,7 @@ For local development against the SDK source:
 npm run build && npm pack
 
 # From your web app — install the local tarball
-npm install ../timber-web-sdk/calda-feedback-sdk-0.1.0.tgz
+npm install ../timber-web-sdk/timber-feedback-sdk-0.1.0.tgz
 ```
 
 ### 2. Get your credentials
@@ -74,7 +74,7 @@ npx playwright install chromium
 Create the route (Next.js App Router example):
 
 ```ts
-// app/api/calda/screenshot/route.ts
+// app/api/timber/screenshot/route.ts
 import { chromium } from "playwright";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -110,26 +110,26 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 Create a client component:
 
 ```tsx
-// src/components/CaldaWidget.tsx
+// src/components/TimberWidget.tsx
 "use client";
 
 import { useEffect } from "react";
 
-export function CaldaWidget() {
+export function TimberWidget() {
   useEffect(() => {
-    import("calda-feedback-sdk").then(({ init }) => {
+    import("timber-feedback-sdk").then(({ init }) => {
       init({
         projectId: "YOUR_PROJECT_ID",
         apiKey: "YOUR_SDK_API_KEY",
         apiUrl: "https://www.timber.report/api/v1",
-        screenshotApiUrl: "/api/calda/screenshot",
+        screenshotApiUrl: "/api/timber/screenshot",
         position: "bottom-right",
         theme: "auto",
       });
     });
 
     return () => {
-      import("calda-feedback-sdk").then(({ destroy }) => destroy());
+      import("timber-feedback-sdk").then(({ destroy }) => destroy());
     };
   }, []);
 
@@ -141,14 +141,14 @@ Add it to your root layout:
 
 ```tsx
 // app/layout.tsx
-import { CaldaWidget } from "@/components/CaldaWidget";
+import { TimberWidget } from "@/components/TimberWidget";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <body>
         {children}
-        <CaldaWidget />
+        <TimberWidget />
       </body>
     </html>
   );
@@ -160,11 +160,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 ```html
 <script src="path/to/sdk.umd.js"></script>
 <script>
-  window.Calda.init({
+  window.Timber.init({
     projectId: "YOUR_PROJECT_ID",
     apiKey: "YOUR_SDK_API_KEY",
     apiUrl: "https://www.timber.report/api/v1",
-    screenshotApiUrl: "/api/calda/screenshot",
+    screenshotApiUrl: "/api/timber/screenshot",
   });
 </script>
 ```
@@ -179,7 +179,7 @@ init({
 
   // Optional
   apiUrl?: string,            // Backend URL — default: "https://www.timber.report/api/v1"
-  screenshotApiUrl?: string,  // Screenshot route — default: "/api/calda/screenshot"
+  screenshotApiUrl?: string,  // Screenshot route — default: "/api/timber/screenshot"
   position?: "bottom-right" | "bottom-left",  // Float button position — default: "bottom-right"
   theme?: "light" | "dark" | "auto",          // Widget theme — default: "auto"
   user?: {                    // Pre-fill user info on reports
@@ -193,7 +193,7 @@ init({
 ## Programmatic API
 
 ```ts
-import { init, destroy, open, close } from "calda-feedback-sdk";
+import { init, destroy, open, close } from "timber-feedback-sdk";
 
 init({ ... });   // Initialize the widget
 open();          // Open the menu programmatically
@@ -212,13 +212,13 @@ destroy();       // Remove the widget and restore console
 
 ## Privacy & Masking
 
-Add `data-calda-mask` to any HTML element to redact its content from screenshots:
+Add `data-timber-mask` to any HTML element to redact its content from screenshots:
 
 ```html
-<div data-calda-mask>This content will appear as [masked] in screenshots</div>
+<div data-timber-mask>This content will appear as [masked] in screenshots</div>
 ```
 
-The SDK automatically excludes its own UI from screenshots via `[data-calda-root]`.
+The SDK automatically excludes its own UI from screenshots via `[data-timber-root]`.
 
 ## Architecture
 
@@ -234,7 +234,7 @@ The SDK automatically excludes its own UI from screenshots via `[data-calda-root
 ```
 dist/
   index.mjs       — ESM module (for bundlers)
-  sdk.umd.js      — UMD bundle (window.Calda)
+  sdk.umd.js      — UMD bundle (window.Timber)
   index.d.ts      — TypeScript declarations
 ```
 
@@ -251,5 +251,5 @@ After making changes, rebuild and update the consuming app:
 
 ```bash
 npm run build && npm pack
-cd ../your-app && npm install ../timber-web-sdk/calda-feedback-sdk-0.1.0.tgz
+cd ../your-app && npm install ../timber-web-sdk/timber-feedback-sdk-0.1.0.tgz
 ```

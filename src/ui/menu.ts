@@ -12,7 +12,7 @@ export function createMenu(
   callbacks: MenuCallbacks
 ): HTMLDivElement {
   const menu = document.createElement("div");
-  menu.className = "calda-menu";
+  menu.className = "timber-menu";
 
   // Position above the anchor button
   menu.style.bottom = `${window.innerHeight - anchorRect.top + 8}px`;
@@ -20,7 +20,7 @@ export function createMenu(
 
   // Screenshot button
   const screenshotBtn = document.createElement("button");
-  screenshotBtn.className = "calda-menu-item";
+  screenshotBtn.className = "timber-menu-item";
   screenshotBtn.innerHTML = `${CAMERA_ICON}<span>Take a Screenshot</span>`;
   screenshotBtn.addEventListener("click", (e) => {
     e.stopPropagation();

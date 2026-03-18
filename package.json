@@ -1,5 +1,5 @@
 {
-  "name": "calda-feedback-sdk",
+  "name": "timber-feedback-sdk",
   "version": "0.1.2",
   "description": "Embeddable feedback widget with screenshot capture and annotation",
   "type": "module",

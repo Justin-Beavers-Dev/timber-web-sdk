@@ -27,7 +27,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Float Button ── */
-    .calda-float-btn {
+    .timber-float-btn {
       position: fixed;
       z-index: 2147483647;
       width: 48px;
@@ -46,14 +46,14 @@ export function getStyles(theme: "light" | "dark"): string {
       touch-action: none;
       overflow: hidden;
     }
-    .calda-float-btn:hover {
+    .timber-float-btn:hover {
       transform: scale(1.08);
       filter: drop-shadow(0 4px 14px rgba(0,0,0,0.3));
     }
-    .calda-float-btn:active {
+    .timber-float-btn:active {
       cursor: grabbing;
     }
-    .calda-float-btn img {
+    .timber-float-btn img {
       width: 100%;
       height: 100%;
       pointer-events: none;
@@ -62,7 +62,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Menu ── */
-    .calda-menu {
+    .timber-menu {
       position: fixed;
       z-index: 2147483647;
       background: ${bg};
@@ -71,9 +71,9 @@ export function getStyles(theme: "light" | "dark"): string {
       padding: 6px;
       min-width: 200px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-      animation: calda-fade-in 0.15s ease;
+      animation: timber-fade-in 0.15s ease;
     }
-    .calda-menu-item {
+    .timber-menu-item {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -87,17 +87,17 @@ export function getStyles(theme: "light" | "dark"): string {
       cursor: pointer;
       text-align: left;
     }
-    .calda-menu-item:hover {
+    .timber-menu-item:hover {
       background: ${bgHover};
     }
-    .calda-menu-item svg {
+    .timber-menu-item svg {
       width: 18px;
       height: 18px;
       flex-shrink: 0;
     }
 
     /* ── Loader Overlay ── */
-    .calda-loader-overlay {
+    .timber-loader-overlay {
       position: fixed;
       inset: 0;
       z-index: 2147483647;
@@ -105,19 +105,19 @@ export function getStyles(theme: "light" | "dark"): string {
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: calda-fade-in 0.2s ease;
+      animation: timber-fade-in 0.2s ease;
     }
-    .calda-spinner {
+    .timber-spinner {
       width: 40px;
       height: 40px;
       border: 3px solid rgba(255,255,255,0.2);
       border-top-color: #fff;
       border-radius: 50%;
-      animation: calda-spin 0.7s linear infinite;
+      animation: timber-spin 0.7s linear infinite;
     }
 
     /* ── Annotation Overlay ── */
-    .calda-annotation-overlay {
+    .timber-annotation-overlay {
       position: fixed;
       inset: 0;
       z-index: 2147483647;
@@ -125,9 +125,9 @@ export function getStyles(theme: "light" | "dark"): string {
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: calda-fade-in 0.2s ease;
+      animation: timber-fade-in 0.2s ease;
     }
-    .calda-canvas-wrap {
+    .timber-canvas-wrap {
       flex: 1;
       display: flex;
       align-items: center;
@@ -136,7 +136,7 @@ export function getStyles(theme: "light" | "dark"): string {
       overflow: hidden;
       width: 100%;
     }
-    .calda-canvas-wrap canvas {
+    .timber-canvas-wrap canvas {
       max-width: 100%;
       max-height: 100%;
       border-radius: 6px;
@@ -145,7 +145,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Toolbar ── */
-    .calda-toolbar {
+    .timber-toolbar {
       position: fixed;
       bottom: 16px;
       left: 50%;
@@ -162,24 +162,24 @@ export function getStyles(theme: "light" | "dark"): string {
       user-select: none;
       z-index: 2147483647;
     }
-    .calda-toolbar.dragging {
+    .timber-toolbar.dragging {
       cursor: grabbing;
     }
 
     /* Toolbar layout sections */
-    .calda-toolbar-section {
+    .timber-toolbar-section {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .calda-toolbar-actions {
+    .timber-toolbar-actions {
       display: flex;
       align-items: center;
       gap: 7px;
     }
 
     /* Vertical divider */
-    .calda-toolbar-divider {
+    .timber-toolbar-divider {
       width: 1px;
       height: 30px;
       background: ${border};
@@ -187,7 +187,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* Icon buttons (text, undo, redo) */
-    .calda-toolbar-icon-btn {
+    .timber-toolbar-icon-btn {
       min-width: 20px;
       height: 20px;
       padding: 0;
@@ -202,19 +202,19 @@ export function getStyles(theme: "light" | "dark"): string {
       transition: color 0.1s, opacity 0.1s;
       opacity: 0.7;
     }
-    .calda-toolbar-icon-btn:hover {
+    .timber-toolbar-icon-btn:hover {
       opacity: 1;
     }
-    .calda-toolbar-icon-btn.active {
+    .timber-toolbar-icon-btn.active {
       opacity: 1;
       color: ${accentFg};
     }
-    .calda-toolbar-icon-btn svg {
+    .timber-toolbar-icon-btn svg {
       pointer-events: none;
     }
 
     /* Undo/Redo wrapper */
-    .calda-toolbar-undo-redo {
+    .timber-toolbar-undo-redo {
       display: flex;
       align-items: center;
       gap: 15px;
@@ -222,7 +222,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* Draw label */
-    .calda-toolbar-draw-label {
+    .timber-toolbar-draw-label {
       padding: 0 20px;
       border: none;
       background: none;
@@ -235,23 +235,23 @@ export function getStyles(theme: "light" | "dark"): string {
       opacity: 0.7;
       transition: opacity 0.1s;
     }
-    .calda-toolbar-draw-label:hover {
+    .timber-toolbar-draw-label:hover {
       opacity: 1;
     }
-    .calda-toolbar-draw-label.active {
+    .timber-toolbar-draw-label.active {
       opacity: 1;
       color: ${accentFg};
     }
 
     /* Color swatches wrapper */
-    .calda-toolbar-swatches {
+    .timber-toolbar-swatches {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
     /* Color Swatches */
-    .calda-color-swatch {
+    .timber-color-swatch {
       width: 22px;
       height: 22px;
       border-radius: 50%;
@@ -260,15 +260,15 @@ export function getStyles(theme: "light" | "dark"): string {
       padding: 0;
       transition: transform 0.1s, border-color 0.15s;
     }
-    .calda-color-swatch:hover {
+    .timber-color-swatch:hover {
       transform: scale(1.15);
     }
-    .calda-color-swatch.active {
+    .timber-color-swatch.active {
       border-color: ${isDark ? "#e2e8f0" : "#334155"};
     }
 
     /* Cancel button */
-    .calda-toolbar-cancel {
+    .timber-toolbar-cancel {
       width: 77px;
       padding: 10px;
       border: 1px solid ${border};
@@ -283,12 +283,12 @@ export function getStyles(theme: "light" | "dark"): string {
       white-space: nowrap;
       transition: background 0.1s;
     }
-    .calda-toolbar-cancel:hover {
+    .timber-toolbar-cancel:hover {
       background: ${bgHover};
     }
 
     /* Report button */
-    .calda-toolbar-report {
+    .timber-toolbar-report {
       width: 77px;
       padding: 10px;
       border: none;
@@ -303,12 +303,12 @@ export function getStyles(theme: "light" | "dark"): string {
       white-space: nowrap;
       transition: opacity 0.1s;
     }
-    .calda-toolbar-report:hover {
+    .timber-toolbar-report:hover {
       opacity: 0.9;
     }
 
     /* ── Text Input (annotation) ── */
-    .calda-text-input {
+    .timber-text-input {
       position: absolute;
       background: transparent;
       border: 1px dashed rgba(255,255,255,0.5);
@@ -323,7 +323,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Report Modal ── */
-    .calda-report-overlay {
+    .timber-report-overlay {
       position: fixed;
       inset: 0;
       z-index: 2147483647;
@@ -332,9 +332,9 @@ export function getStyles(theme: "light" | "dark"): string {
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: calda-fade-in 0.2s ease;
+      animation: timber-fade-in 0.2s ease;
     }
-    .calda-report-modal {
+    .timber-report-modal {
       background: ${cardBg};
       border-radius: 12px;
       padding: 44px;
@@ -349,24 +349,24 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Header ── */
-    .calda-report-header-section {
+    .timber-report-header-section {
       display: flex;
       flex-direction: column;
       gap: 16px;
       margin-bottom: 0;
     }
-    .calda-report-header-row {
+    .timber-report-header-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .calda-report-header {
+    .timber-report-header {
       font-size: 30px;
       font-weight: 400;
       line-height: 1;
       color: ${accentFg};
     }
-    .calda-report-close {
+    .timber-report-close {
       width: 20px;
       height: 20px;
       background: none;
@@ -381,32 +381,32 @@ export function getStyles(theme: "light" | "dark"): string {
       border-radius: 3px;
       transition: opacity 0.15s;
     }
-    .calda-report-close:hover {
+    .timber-report-close:hover {
       opacity: 1;
     }
-    .calda-report-close svg {
+    .timber-report-close svg {
       width: 20px;
       height: 20px;
     }
-    .calda-report-subtitle {
+    .timber-report-subtitle {
       font-size: 14px;
       line-height: 20px;
       color: ${accentFg};
     }
 
     /* ── Screenshot ── */
-    .calda-report-screenshot-section {
+    .timber-report-screenshot-section {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
-    .calda-report-screenshot-label {
+    .timber-report-screenshot-label {
       font-size: 14px;
       font-weight: 500;
       line-height: 20px;
       color: ${accentFg};
     }
-    .calda-report-thumb {
+    .timber-report-thumb {
       width: 198px;
       height: 140px;
       object-fit: cover;
@@ -414,33 +414,33 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Form ── */
-    .calda-report-fields {
+    .timber-report-fields {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-    .calda-report-field {
+    .timber-report-field {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
-    .calda-report-label-row {
+    .timber-report-label-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .calda-report-label {
+    .timber-report-label {
       font-size: 14px;
       font-weight: 500;
       line-height: 20px;
       color: ${accentFg};
     }
-    .calda-report-char-count {
+    .timber-report-char-count {
       font-size: 12px;
       line-height: 1;
       color: ${mutedFg};
     }
-    .calda-report-input {
+    .timber-report-input {
       width: 100%;
       height: 48px;
       padding: 0 12px;
@@ -454,14 +454,14 @@ export function getStyles(theme: "light" | "dark"): string {
       outline: none;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .calda-report-input:focus {
+    .timber-report-input:focus {
       border-color: ${placeholder};
       box-shadow: 0 0 0 2px ${isDark ? "rgba(148,163,184,0.1)" : "rgba(15,23,42,0.05)"};
     }
-    .calda-report-input::placeholder {
+    .timber-report-input::placeholder {
       color: ${placeholder};
     }
-    .calda-report-textarea {
+    .timber-report-textarea {
       width: 100%;
       height: 80px;
       padding: 6px 12px;
@@ -476,27 +476,27 @@ export function getStyles(theme: "light" | "dark"): string {
       outline: none;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .calda-report-textarea:focus {
+    .timber-report-textarea:focus {
       border-color: ${placeholder};
       box-shadow: 0 0 0 2px ${isDark ? "rgba(148,163,184,0.1)" : "rgba(15,23,42,0.05)"};
     }
-    .calda-report-textarea::placeholder {
+    .timber-report-textarea::placeholder {
       color: ${placeholder};
     }
 
     /* ── Priority + Device Row ── */
-    .calda-report-row {
+    .timber-report-row {
       display: flex;
       gap: 12px;
     }
-    .calda-report-row > .calda-report-field {
+    .timber-report-row > .timber-report-field {
       flex: 1;
       min-width: 0;
     }
-    .calda-priority-dropdown {
+    .timber-priority-dropdown {
       position: relative;
     }
-    .calda-priority-trigger {
+    .timber-priority-trigger {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -513,28 +513,28 @@ export function getStyles(theme: "light" | "dark"): string {
       text-align: left;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .calda-priority-trigger:focus {
+    .timber-priority-trigger:focus {
       border-color: ${placeholder};
       box-shadow: 0 0 0 2px ${isDark ? "rgba(148,163,184,0.1)" : "rgba(15,23,42,0.05)"};
       outline: none;
     }
-    .calda-priority-trigger-label {
+    .timber-priority-trigger-label {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .calda-priority-placeholder {
+    .timber-priority-placeholder {
       color: ${placeholder};
     }
-    .calda-priority-chevron {
+    .timber-priority-chevron {
       transition: transform 0.2s;
       flex-shrink: 0;
       color: ${fg};
     }
-    .calda-priority-chevron.open {
+    .timber-priority-chevron.open {
       transform: rotate(180deg);
     }
-    .calda-priority-options {
+    .timber-priority-options {
       position: absolute;
       bottom: calc(100% + 4px);
       left: 0;
@@ -545,9 +545,9 @@ export function getStyles(theme: "light" | "dark"): string {
       padding: 4px;
       box-shadow: 0 -4px 30px rgba(0,0,0,${isDark ? "0.4" : "0.12"});
       z-index: 10;
-      animation: calda-fade-in 0.1s ease;
+      animation: timber-fade-in 0.1s ease;
     }
-    .calda-priority-option {
+    .timber-priority-option {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -561,10 +561,10 @@ export function getStyles(theme: "light" | "dark"): string {
       cursor: pointer;
       text-align: left;
     }
-    .calda-priority-option:hover {
+    .timber-priority-option:hover {
       background: ${bgHover};
     }
-    .calda-priority-dot {
+    .timber-priority-dot {
       width: 14px;
       height: 14px;
       border-radius: 50%;
@@ -572,7 +572,7 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Error ── */
-    .calda-report-error {
+    .timber-report-error {
       padding: 10px 12px;
       border-radius: 8px;
       background: ${isDark ? "#3b1818" : "#fef2f2"};
@@ -583,12 +583,12 @@ export function getStyles(theme: "light" | "dark"): string {
     }
 
     /* ── Buttons ── */
-    .calda-report-buttons {
+    .timber-report-buttons {
       display: flex;
       justify-content: flex-end;
       gap: 8px;
     }
-    .calda-report-cancel {
+    .timber-report-cancel {
       height: 40px;
       padding: 8px 20px;
       border-radius: 8px;
@@ -601,10 +601,10 @@ export function getStyles(theme: "light" | "dark"): string {
       font-family: inherit;
       transition: background 0.15s;
     }
-    .calda-report-cancel:hover {
+    .timber-report-cancel:hover {
       background: ${bgHover};
     }
-    .calda-report-submit {
+    .timber-report-submit {
       height: 40px;
       padding: 8px 16px;
       border-radius: 8px;
@@ -617,31 +617,31 @@ export function getStyles(theme: "light" | "dark"): string {
       font-family: inherit;
       transition: opacity 0.15s;
     }
-    .calda-report-submit:hover:not(:disabled) {
+    .timber-report-submit:hover:not(:disabled) {
       opacity: 0.9;
     }
-    .calda-report-submit:disabled {
+    .timber-report-submit:disabled {
       opacity: 0.4;
       cursor: not-allowed;
     }
-    .calda-report-submit-spinner {
+    .timber-report-submit-spinner {
       display: inline-block;
       width: 14px;
       height: 14px;
       border: 2px solid ${isDark ? "rgba(15,23,42,0.3)" : "rgba(248,250,252,0.3)"};
       border-top-color: ${primaryFg};
       border-radius: 50%;
-      animation: calda-spin 0.6s linear infinite;
+      animation: timber-spin 0.6s linear infinite;
       margin-right: 6px;
       vertical-align: middle;
     }
 
     /* ── Animations ── */
-    @keyframes calda-fade-in {
+    @keyframes timber-fade-in {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-    @keyframes calda-spin {
+    @keyframes timber-spin {
       to { transform: rotate(360deg); }
     }
   `;

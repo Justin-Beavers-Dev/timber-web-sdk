@@ -35,25 +35,25 @@ export function createReportModal(
   let priorityOpen = false;
 
   const overlay = document.createElement("div");
-  overlay.className = "calda-report-overlay";
+  overlay.className = "timber-report-overlay";
 
   const modal = document.createElement("div");
-  modal.className = "calda-report-modal";
+  modal.className = "timber-report-modal";
 
   // ── Header section ──
   const headerSection = document.createElement("div");
-  headerSection.className = "calda-report-header-section";
+  headerSection.className = "timber-report-header-section";
 
   const headerRow = document.createElement("div");
-  headerRow.className = "calda-report-header-row";
+  headerRow.className = "timber-report-header-row";
 
   const header = document.createElement("h3");
-  header.className = "calda-report-header";
+  header.className = "timber-report-header";
   header.textContent = "Report a Bug";
 
   const closeBtn = document.createElement("button");
   closeBtn.type = "button";
-  closeBtn.className = "calda-report-close";
+  closeBtn.className = "timber-report-close";
   closeBtn.innerHTML = CLOSE_ICON;
   closeBtn.addEventListener("click", () => callbacks.onCancel());
 
@@ -62,7 +62,7 @@ export function createReportModal(
   headerSection.appendChild(headerRow);
 
   const subtitle = document.createElement("p");
-  subtitle.className = "calda-report-subtitle";
+  subtitle.className = "timber-report-subtitle";
   subtitle.textContent = "Provide details about the issue so our team can investigate and resolve it quickly.";
   headerSection.appendChild(subtitle);
 
@@ -70,15 +70,15 @@ export function createReportModal(
 
   // ── Screenshot ──
   const screenshotSection = document.createElement("div");
-  screenshotSection.className = "calda-report-screenshot-section";
+  screenshotSection.className = "timber-report-screenshot-section";
 
   const screenshotLabel = document.createElement("p");
-  screenshotLabel.className = "calda-report-screenshot-label";
+  screenshotLabel.className = "timber-report-screenshot-label";
   screenshotLabel.textContent = "Screenshot";
   screenshotSection.appendChild(screenshotLabel);
 
   const thumb = document.createElement("img");
-  thumb.className = "calda-report-thumb";
+  thumb.className = "timber-report-thumb";
   thumb.src = screenshotDataUrl;
   thumb.alt = "Screenshot preview";
   screenshotSection.appendChild(thumb);
@@ -87,7 +87,7 @@ export function createReportModal(
 
   // ── Form fields ──
   const fields = document.createElement("div");
-  fields.className = "calda-report-fields";
+  fields.className = "timber-report-fields";
 
   // Title
   const titleField = createField("Title");
@@ -101,7 +101,7 @@ export function createReportModal(
     "Please provide more info regarding the current behaviour...",
     DESCRIPTION_MAX,
   );
-  const descCounter = descField.querySelector(".calda-report-char-count")!;
+  const descCounter = descField.querySelector(".timber-report-char-count")!;
   descTextarea.addEventListener("input", () => {
     descCounter.textContent = `${descTextarea.value.length}/${DESCRIPTION_MAX}`;
     updateSubmitState();
@@ -115,7 +115,7 @@ export function createReportModal(
     "Please provide more info about the expected behaviour...",
     EXPECTED_MAX,
   );
-  const expectedCounter = expectedField.querySelector(".calda-report-char-count")!;
+  const expectedCounter = expectedField.querySelector(".timber-report-char-count")!;
   expectedTextarea.addEventListener("input", () => {
     expectedCounter.textContent = `${expectedTextarea.value.length}/${EXPECTED_MAX}`;
     updateSubmitState();
@@ -125,30 +125,30 @@ export function createReportModal(
 
   // Priority + Device row
   const row = document.createElement("div");
-  row.className = "calda-report-row";
+  row.className = "timber-report-row";
 
   // Priority
   const priorityField = createField("Priority");
   const priorityDropdown = document.createElement("div");
-  priorityDropdown.className = "calda-priority-dropdown";
+  priorityDropdown.className = "timber-priority-dropdown";
 
   const priorityTrigger = document.createElement("button");
   priorityTrigger.type = "button";
-  priorityTrigger.className = "calda-priority-trigger";
-  priorityTrigger.innerHTML = `<span class="calda-priority-placeholder">Choose Priority</span><span class="calda-priority-chevron">${CHEVRON_DOWN}</span>`;
+  priorityTrigger.className = "timber-priority-trigger";
+  priorityTrigger.innerHTML = `<span class="timber-priority-placeholder">Choose Priority</span><span class="timber-priority-chevron">${CHEVRON_DOWN}</span>`;
 
   const priorityOptionsEl = document.createElement("div");
-  priorityOptionsEl.className = "calda-priority-options";
+  priorityOptionsEl.className = "timber-priority-options";
   priorityOptionsEl.style.display = "none";
 
   for (const opt of PRIORITY_OPTIONS) {
     const optBtn = document.createElement("button");
     optBtn.type = "button";
-    optBtn.className = "calda-priority-option";
-    optBtn.innerHTML = `<span class="calda-priority-dot" style="background:${opt.color}"></span>${escapeHtml(opt.label)}`;
+    optBtn.className = "timber-priority-option";
+    optBtn.innerHTML = `<span class="timber-priority-dot" style="background:${opt.color}"></span>${escapeHtml(opt.label)}`;
     optBtn.addEventListener("click", () => {
       selectedPriority = opt.value;
-      priorityTrigger.innerHTML = `<span class="calda-priority-trigger-label"><span class="calda-priority-dot" style="background:${opt.color}"></span>${escapeHtml(opt.label)}</span><span class="calda-priority-chevron">${CHEVRON_DOWN}</span>`;
+      priorityTrigger.innerHTML = `<span class="timber-priority-trigger-label"><span class="timber-priority-dot" style="background:${opt.color}"></span>${escapeHtml(opt.label)}</span><span class="timber-priority-chevron">${CHEVRON_DOWN}</span>`;
       closePriorityDropdown();
       updateSubmitState();
     });
@@ -158,7 +158,7 @@ export function createReportModal(
   priorityTrigger.addEventListener("click", () => {
     priorityOpen = !priorityOpen;
     priorityOptionsEl.style.display = priorityOpen ? "" : "none";
-    const chevron = priorityTrigger.querySelector(".calda-priority-chevron");
+    const chevron = priorityTrigger.querySelector(".timber-priority-chevron");
     chevron?.classList.toggle("open", priorityOpen);
   });
 
@@ -179,23 +179,23 @@ export function createReportModal(
 
   // ── Error area ──
   const errorEl = document.createElement("div");
-  errorEl.className = "calda-report-error";
+  errorEl.className = "timber-report-error";
   errorEl.style.display = "none";
   modal.appendChild(errorEl);
 
   // ── Buttons ──
   const btnRow = document.createElement("div");
-  btnRow.className = "calda-report-buttons";
+  btnRow.className = "timber-report-buttons";
 
   const cancelBtn = document.createElement("button");
   cancelBtn.type = "button";
-  cancelBtn.className = "calda-report-cancel";
+  cancelBtn.className = "timber-report-cancel";
   cancelBtn.textContent = "Cancel";
   cancelBtn.addEventListener("click", () => callbacks.onCancel());
 
   const submitBtn = document.createElement("button");
   submitBtn.type = "button";
-  submitBtn.className = "calda-report-submit";
+  submitBtn.className = "timber-report-submit";
   submitBtn.textContent = "Report a Bug";
   submitBtn.disabled = true;
   submitBtn.addEventListener("click", () => {
@@ -229,7 +229,7 @@ export function createReportModal(
   function closePriorityDropdown(): void {
     priorityOpen = false;
     priorityOptionsEl.style.display = "none";
-    const chevron = priorityTrigger.querySelector(".calda-priority-chevron");
+    const chevron = priorityTrigger.querySelector(".timber-priority-chevron");
     chevron?.classList.remove("open");
   }
 
@@ -250,7 +250,7 @@ export function createReportModal(
 }
 
 export function setModalError(overlay: HTMLDivElement, message: string): void {
-  const errorEl = overlay.querySelector<HTMLDivElement>(".calda-report-error");
+  const errorEl = overlay.querySelector<HTMLDivElement>(".timber-report-error");
   if (errorEl) {
     errorEl.textContent = message;
     errorEl.style.display = message ? "" : "none";
@@ -258,18 +258,18 @@ export function setModalError(overlay: HTMLDivElement, message: string): void {
 }
 
 export function setModalLoading(overlay: HTMLDivElement, loading: boolean): void {
-  const submitBtn = overlay.querySelector<HTMLButtonElement>(".calda-report-submit");
+  const submitBtn = overlay.querySelector<HTMLButtonElement>(".timber-report-submit");
   if (!submitBtn) return;
 
   if (loading) {
     submitBtn.disabled = true;
-    submitBtn.innerHTML = `<span class="calda-report-submit-spinner"></span>Sending...`;
+    submitBtn.innerHTML = `<span class="timber-report-submit-spinner"></span>Sending...`;
   } else {
     submitBtn.disabled = false;
     submitBtn.textContent = "Report a Bug";
   }
 
-  const cancelBtn = overlay.querySelector<HTMLButtonElement>(".calda-report-cancel");
+  const cancelBtn = overlay.querySelector<HTMLButtonElement>(".timber-report-cancel");
   if (cancelBtn) cancelBtn.style.display = loading ? "none" : "";
 }
 
@@ -277,10 +277,10 @@ export function setModalLoading(overlay: HTMLDivElement, loading: boolean): void
 
 function createField(label: string): HTMLDivElement {
   const field = document.createElement("div");
-  field.className = "calda-report-field";
+  field.className = "timber-report-field";
 
   const labelEl = document.createElement("label");
-  labelEl.className = "calda-report-label";
+  labelEl.className = "timber-report-label";
   labelEl.textContent = label;
   field.appendChild(labelEl);
 
@@ -289,17 +289,17 @@ function createField(label: string): HTMLDivElement {
 
 function createFieldWithCounter(label: string, max: number): HTMLDivElement {
   const field = document.createElement("div");
-  field.className = "calda-report-field";
+  field.className = "timber-report-field";
 
   const labelRow = document.createElement("div");
-  labelRow.className = "calda-report-label-row";
+  labelRow.className = "timber-report-label-row";
 
   const labelEl = document.createElement("label");
-  labelEl.className = "calda-report-label";
+  labelEl.className = "timber-report-label";
   labelEl.textContent = label;
 
   const counter = document.createElement("span");
-  counter.className = "calda-report-char-count";
+  counter.className = "timber-report-char-count";
   counter.textContent = `0/${max}`;
 
   labelRow.appendChild(labelEl);
@@ -312,14 +312,14 @@ function createFieldWithCounter(label: string, max: number): HTMLDivElement {
 function createInput(placeholder: string): HTMLInputElement {
   const input = document.createElement("input");
   input.type = "text";
-  input.className = "calda-report-input";
+  input.className = "timber-report-input";
   input.placeholder = placeholder;
   return input;
 }
 
 function createTextarea(placeholder: string, maxLength: number): HTMLTextAreaElement {
   const textarea = document.createElement("textarea");
-  textarea.className = "calda-report-textarea";
+  textarea.className = "timber-report-textarea";
   textarea.placeholder = placeholder;
   textarea.maxLength = maxLength;
   return textarea;

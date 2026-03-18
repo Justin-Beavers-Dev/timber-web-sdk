@@ -1,5 +1,5 @@
 /** SDK configuration passed to init() */
-export interface CaldaConfig {
+export interface TimberConfig {
   projectId: string;
   apiKey: string;
   apiUrl?: string;
@@ -74,6 +74,6 @@ export interface FeedbackPayload {
   formData: ReportFormData;
   screenshotDataUrl: string | null;
   logs: LogEntry[];
-  user?: CaldaConfig["user"];
+  user?: TimberConfig["user"];
   timestamp: number;
 }

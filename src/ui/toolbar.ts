@@ -22,7 +22,7 @@ const REDO_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20
 
 function createDivider(): HTMLSpanElement {
   const div = document.createElement("span");
-  div.className = "calda-toolbar-divider";
+  div.className = "timber-toolbar-divider";
   return div;
 }
 
@@ -32,7 +32,7 @@ function createIconButton(
   onClick: () => void,
 ): HTMLButtonElement {
   const btn = document.createElement("button");
-  btn.className = `calda-toolbar-icon-btn ${className}`;
+  btn.className = `timber-toolbar-icon-btn ${className}`;
   btn.innerHTML = innerHTML;
   btn.addEventListener("click", onClick);
   return btn;
@@ -46,11 +46,11 @@ export function createToolbar(
   _theme: "light" | "dark",
 ): HTMLDivElement {
   const toolbar = document.createElement("div");
-  toolbar.className = "calda-toolbar";
+  toolbar.className = "timber-toolbar";
 
   // Left section: tools
   const toolsSection = document.createElement("div");
-  toolsSection.className = "calda-toolbar-section";
+  toolsSection.className = "timber-toolbar-section";
 
   // Text tool button
   const textBtn = createIconButton(
@@ -70,7 +70,7 @@ export function createToolbar(
 
   // Undo / Redo
   const undoRedoWrap = document.createElement("div");
-  undoRedoWrap.className = "calda-toolbar-undo-redo";
+  undoRedoWrap.className = "timber-toolbar-undo-redo";
 
   const undoBtn = createIconButton("", UNDO_ICON, () => callbacks.onUndo());
   const redoBtn = createIconButton("", REDO_ICON, () => callbacks.onRedo());
@@ -82,7 +82,7 @@ export function createToolbar(
 
   // Draw label (acts as draw tool selector)
   const drawLabel = document.createElement("button");
-  drawLabel.className = `calda-toolbar-draw-label${state.tool === "draw" ? " active" : ""}`;
+  drawLabel.className = `timber-toolbar-draw-label${state.tool === "draw" ? " active" : ""}`;
   drawLabel.textContent = "Draw";
   drawLabel.addEventListener("click", () => {
     state.tool = "draw";
@@ -94,11 +94,11 @@ export function createToolbar(
 
   // Color swatches
   const swatchesWrap = document.createElement("div");
-  swatchesWrap.className = "calda-toolbar-swatches";
+  swatchesWrap.className = "timber-toolbar-swatches";
 
   const swatches: HTMLButtonElement[] = COLORS.map((color) => {
     const swatch = document.createElement("button");
-    swatch.className = `calda-color-swatch${color === state.color ? " active" : ""}`;
+    swatch.className = `timber-color-swatch${color === state.color ? " active" : ""}`;
     swatch.style.background = color;
     swatch.setAttribute("aria-label", `Color ${color}`);
     swatch.addEventListener("click", () => {
@@ -116,15 +116,15 @@ export function createToolbar(
 
   // Right section: actions
   const actionsSection = document.createElement("div");
-  actionsSection.className = "calda-toolbar-actions";
+  actionsSection.className = "timber-toolbar-actions";
 
   const cancelBtn = document.createElement("button");
-  cancelBtn.className = "calda-toolbar-cancel";
+  cancelBtn.className = "timber-toolbar-cancel";
   cancelBtn.textContent = "Cancel";
   cancelBtn.addEventListener("click", () => callbacks.onCancel());
 
   const reportBtn = document.createElement("button");
-  reportBtn.className = "calda-toolbar-report";
+  reportBtn.className = "timber-toolbar-report";
   reportBtn.textContent = "Report";
   reportBtn.addEventListener("click", () => callbacks.onSend());
 

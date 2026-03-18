@@ -1,13 +1,13 @@
-import type { CaldaConfig, ResolvedConfig } from "./types";
-import { CaldaWidget } from "./widget";
+import type { TimberConfig, ResolvedConfig } from "./types";
+import { TimberWidget } from "./widget";
 
 // Re-export types for consumers
-export type { CaldaConfig, FeedbackPayload, LogEntry, ReportFormData, BugPriority } from "./types";
+export type { TimberConfig, FeedbackPayload, LogEntry, ReportFormData, BugPriority } from "./types";
 
-let instance: CaldaWidget | null = null;
+let instance: TimberWidget | null = null;
 
 /** Resolve theme "auto" to light/dark based on prefers-color-scheme */
-function resolveTheme(theme: CaldaConfig["theme"]): "light" | "dark" {
+function resolveTheme(theme: TimberConfig["theme"]): "light" | "dark" {
   if (theme === "light" || theme === "dark") return theme;
   if (typeof window !== "undefined" && window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
     return "dark";
@@ -16,22 +16,22 @@ function resolveTheme(theme: CaldaConfig["theme"]): "light" | "dark" {
 }
 
 /**
- * Initialize the Calda Feedback SDK.
+ * Initialize the Timber Feedback SDK.
  *
  * @example
  * // ESM
- * import { init } from 'calda-feedback-sdk';
+ * import { init } from 'timber-feedback-sdk';
  * init({ projectId: 'my-project' });
  *
  * // UMD (script tag)
- * window.Calda.init({ projectId: 'my-project' });
+ * window.Timber.init({ projectId: 'my-project' });
  */
-export function init(config: CaldaConfig): void {
+export function init(config: TimberConfig): void {
   if (!config?.projectId) {
-    throw new Error("[Calda] projectId is required");
+    throw new Error("[Timber] projectId is required");
   }
   if (!config?.apiKey) {
-    throw new Error("[Calda] apiKey is required");
+    throw new Error("[Timber] apiKey is required");
   }
 
   if (instance) {
@@ -43,13 +43,13 @@ export function init(config: CaldaConfig): void {
     projectId: config.projectId,
     apiKey: config.apiKey,
     apiUrl: (config.apiUrl ?? "https://www.timber.report/api/v1").replace(/\/+$/, ""),
-    screenshotApiUrl: config.screenshotApiUrl ?? "/api/calda/screenshot",
+    screenshotApiUrl: config.screenshotApiUrl ?? "/api/timber/screenshot",
     position: config.position ?? "bottom-right",
     theme: resolveTheme(config.theme ?? "auto"),
     user: config.user,
   };
 
-  instance = new CaldaWidget(resolved);
+  instance = new TimberWidget(resolved);
 }
 
 /** Destroy the SDK instance and remove all DOM elements */

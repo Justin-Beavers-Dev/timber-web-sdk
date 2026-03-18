@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: "src/index.ts",
-      name: "Calda",
+      name: "Timber",
       formats: ["umd", "es"],
       fileName: (format) => {
         if (format === "umd") return "sdk.umd.js";

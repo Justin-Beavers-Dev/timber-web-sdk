@@ -21,10 +21,10 @@ export function createAnnotationOverlay(
   theme: "light" | "dark",
 ): HTMLDivElement {
   const overlay = document.createElement("div");
-  overlay.className = "calda-annotation-overlay";
+  overlay.className = "timber-annotation-overlay";
 
   const canvasWrap = document.createElement("div");
-  canvasWrap.className = "calda-canvas-wrap";
+  canvasWrap.className = "timber-canvas-wrap";
 
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d")!;
@@ -127,7 +127,7 @@ export function createAnnotationOverlay(
 
     activeInput = document.createElement("input");
     activeInput.type = "text";
-    activeInput.className = "calda-text-input";
+    activeInput.className = "timber-text-input";
     activeInput.style.left = `${e.clientX - rect.left + canvasWrap.offsetLeft}px`;
     activeInput.style.top = `${e.clientY - rect.top + canvasWrap.offsetTop}px`;
     activeInput.style.color = currentColor;

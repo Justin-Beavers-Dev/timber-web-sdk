@@ -16,7 +16,7 @@ import { createReportModal, setModalError, setModalLoading } from "./ui/report-m
  *   idle → menu → capturing → annotating → idle
  *                           ↘ cancel → idle
  */
-export class CaldaWidget {
+export class TimberWidget {
   private config: ResolvedConfig;
   private state: WidgetState = "idle";
   private host: HTMLDivElement;
@@ -38,7 +38,7 @@ export class CaldaWidget {
 
     // Create shadow DOM host element — no pointer-events:none so children receive clicks
     this.host = document.createElement("div");
-    this.host.setAttribute("data-calda-root", "");
+    this.host.setAttribute("data-timber-root", "");
     this.host.style.cssText = "position:fixed;z-index:2147483647;top:0;left:0;width:0;height:0;overflow:visible;";
     document.body.appendChild(this.host);
 
@@ -136,7 +136,7 @@ export class CaldaWidget {
         this.config.theme
       );
     } catch (err) {
-      console.error("[Calda] Screenshot capture failed:", err);
+      console.error("[Timber] Screenshot capture failed:", err);
       this.loaderEl?.remove();
       this.loaderEl = null;
       this.transitionTo("idle");
@@ -226,7 +226,7 @@ export class CaldaWidget {
       this.transitionTo("idle");
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Failed to send report";
-      console.error("[Calda] Submit failed:", message);
+      console.error("[Timber] Submit failed:", message);
       if (this.reportEl) {
         setModalLoading(this.reportEl, false);
         setModalError(this.reportEl, message);

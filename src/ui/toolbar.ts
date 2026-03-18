@@ -63,7 +63,7 @@ export function createToolbar(
       callbacks.onToolChange("text");
     },
   );
-  textBtn.style.padding = "0 32px";
+  textBtn.style.padding = "0 6px";
   toolsSection.appendChild(textBtn);
 
   toolsSection.appendChild(createDivider());

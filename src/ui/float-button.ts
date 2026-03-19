@@ -1,4 +1,4 @@
-import logoUrl from "../assets/logo2.png";
+import logoUrl from "../assets/timber-logo.png";
 
 export interface FloatButtonOptions {
   position: "bottom-right" | "bottom-left";

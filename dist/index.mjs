@@ -120,8 +120,8 @@ function ne(r) {
     .timber-float-btn {
       position: fixed;
       z-index: 2147483647;
-      width: 48px;
-      height: 48px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
       background: none;
       border: none;

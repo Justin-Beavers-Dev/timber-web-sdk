@@ -1,6 +1,6 @@
 import type { ResolvedConfig, WidgetState, ReportFormData } from "./types";
 import { LogCapture } from "./capture/logs";
-import { captureScreenshot } from "./capture/screenshot";
+import { captureScreenshotNative, captureScreenshotApi } from "./capture/screenshot";
 import { getStyles } from "./ui/styles";
 import { createFloatButton } from "./ui/float-button";
 import { createMenu } from "./ui/menu";
@@ -117,7 +117,16 @@ export class TimberWidget {
   /** Capture screenshot and transition to annotating */
   private async doCapture(): Promise<void> {
     try {
-      const objectUrl = await captureScreenshot(this.config.screenshotApiUrl);
+      let objectUrl: string;
+
+      if (this.config.screenshotMode === "native") {
+        this.host.style.visibility = "hidden";
+        await new Promise((r) => requestAnimationFrame(r));
+        objectUrl = await captureScreenshotNative();
+        this.host.style.visibility = "";
+      } else {
+        objectUrl = await captureScreenshotApi(this.config.screenshotApiUrl);
+      }
       this.screenshotObjectUrl = objectUrl;
 
       // Remove loader

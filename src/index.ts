@@ -43,6 +43,7 @@ export function init(config: TimberConfig): void {
     projectId: config.projectId,
     apiKey: config.apiKey,
     apiUrl: (config.apiUrl ?? "https://www.timber.report/api/v1").replace(/\/+$/, ""),
+    screenshotMode: config.screenshotMode ?? "native",
     screenshotApiUrl: config.screenshotApiUrl ?? "/api/timber/screenshot",
     position: config.position ?? "bottom-right",
     theme: resolveTheme(config.theme ?? "auto"),

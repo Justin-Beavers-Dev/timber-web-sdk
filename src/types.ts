@@ -3,6 +3,15 @@ export interface TimberConfig {
   projectId: string;
   apiKey: string;
   apiUrl?: string;
+  /**
+   * How screenshots are captured.
+   * - `"native"` (default) — uses the browser's Screen Capture API
+   *    (getDisplayMedia). No server-side setup required.
+   * - `"api"` — sends serialized DOM to `screenshotApiUrl` for
+   *    server-side rendering (requires a hosted screenshot endpoint).
+   */
+  screenshotMode?: "native" | "api";
+  /** Only used when `screenshotMode` is `"api"`. */
   screenshotApiUrl?: string;
   position?: "bottom-right" | "bottom-left";
   theme?: "light" | "dark" | "auto";
@@ -18,6 +27,7 @@ export interface ResolvedConfig {
   projectId: string;
   apiKey: string;
   apiUrl: string;
+  screenshotMode: "native" | "api";
   screenshotApiUrl: string;
   position: "bottom-right" | "bottom-left";
   theme: "light" | "dark";

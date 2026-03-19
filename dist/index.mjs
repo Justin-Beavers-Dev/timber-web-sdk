@@ -737,7 +737,7 @@ function ne(r) {
   `
   );
 }
-const ie = "data:image/png;base64,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";
+const ie = "data:image/png;base64,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";
 function ae(r, e) {
   const t = document.createElement("button");
   t.className = "timber-float-btn";
@@ -750,14 +750,14 @@ function ae(r, e) {
     a = !0, i = !1, s = m.clientX, c = m.clientY;
     const b = t.getBoundingClientRect();
     u = b.left, p = b.top, t.setPointerCapture(m.pointerId), m.preventDefault();
-  }, S = (m) => {
+  }, R = (m) => {
     if (!a) return;
     const b = m.clientX - s, y = m.clientY - c;
     (Math.abs(b) > 3 || Math.abs(y) > 3) && (i = !0), i && (t.style.right = "auto", t.style.left = "auto", t.style.bottom = "auto", t.style.left = `${u + b}px`, t.style.top = `${p + y}px`);
   }, l = () => {
     a = !1, i || e.onClick();
   };
-  return t.addEventListener("pointerdown", g), t.addEventListener("pointermove", S), t.addEventListener("pointerup", l), r.appendChild(t), t;
+  return t.addEventListener("pointerdown", g), t.addEventListener("pointermove", R), t.addEventListener("pointerup", l), r.appendChild(t), t;
 }
 const se = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>';
 function le(r, e, t) {
@@ -785,7 +785,7 @@ function J() {
   const r = document.createElement("span");
   return r.className = "timber-toolbar-divider", r;
 }
-function H(r, e, t) {
+function Q(r, e, t) {
   const o = document.createElement("button");
   return o.className = `timber-toolbar-icon-btn ${r}`, o.innerHTML = e, o.addEventListener("click", t), o;
 }
@@ -794,7 +794,7 @@ function ue(r, e, t, o) {
   n.className = "timber-toolbar";
   const a = document.createElement("div");
   a.className = "timber-toolbar-section";
-  const i = H(
+  const i = Q(
     e.tool === "text" ? "active" : "",
     pe,
     () => {
@@ -804,7 +804,7 @@ function ue(r, e, t, o) {
   i.style.padding = "0 6px", a.appendChild(i), a.appendChild(J());
   const s = document.createElement("div");
   s.className = "timber-toolbar-undo-redo";
-  const c = H("", he, () => t.onUndo()), u = H("", me, () => t.onRedo());
+  const c = Q("", he, () => t.onUndo()), u = Q("", me, () => t.onRedo());
   s.appendChild(c), s.appendChild(u), a.appendChild(s), a.appendChild(J());
   const p = document.createElement("button");
   p.className = `timber-toolbar-draw-label${e.tool === "draw" ? " active" : ""}`, p.textContent = "Draw", p.addEventListener("click", () => {
@@ -812,29 +812,29 @@ function ue(r, e, t, o) {
   }), a.appendChild(p);
   const g = document.createElement("div");
   g.className = "timber-toolbar-swatches";
-  const S = de.map((h) => {
-    const w = document.createElement("button");
-    return w.className = `timber-color-swatch${h === e.color ? " active" : ""}`, w.style.background = h, w.setAttribute("aria-label", `Color ${h}`), w.addEventListener("click", () => {
-      e.color = h, S.forEach((N) => N.classList.remove("active")), w.classList.add("active"), t.onColorChange(h);
-    }), w;
+  const R = de.map((h) => {
+    const v = document.createElement("button");
+    return v.className = `timber-color-swatch${h === e.color ? " active" : ""}`, v.style.background = h, v.setAttribute("aria-label", `Color ${h}`), v.addEventListener("click", () => {
+      e.color = h, R.forEach((L) => L.classList.remove("active")), v.classList.add("active"), t.onColorChange(h);
+    }), v;
   });
-  S.forEach((h) => g.appendChild(h)), a.appendChild(g), n.appendChild(a);
+  R.forEach((h) => g.appendChild(h)), a.appendChild(g), n.appendChild(a);
   const l = document.createElement("div");
   l.className = "timber-toolbar-actions";
   const m = document.createElement("button");
   m.className = "timber-toolbar-cancel", m.textContent = "Cancel", m.addEventListener("click", () => t.onCancel());
   const b = document.createElement("button");
   b.className = "timber-toolbar-report", b.textContent = "Report", b.addEventListener("click", () => t.onSend()), l.appendChild(m), l.appendChild(b), n.appendChild(l);
-  let y = !1, B = 0, L = 0, x = 0, A = 0;
+  let y = !1, I = 0, j = 0, x = 0, A = 0;
   return n.addEventListener("pointerdown", (h) => {
     if (h.target.closest("button")) return;
-    y = !0, n.classList.add("dragging"), B = h.clientX, L = h.clientY;
-    const w = n.getBoundingClientRect();
-    x = w.left, A = w.top, n.setPointerCapture(h.pointerId), h.preventDefault();
+    y = !0, n.classList.add("dragging"), I = h.clientX, j = h.clientY;
+    const v = n.getBoundingClientRect();
+    x = v.left, A = v.top, n.setPointerCapture(h.pointerId), h.preventDefault();
   }), n.addEventListener("pointermove", (h) => {
     if (!y) return;
-    const w = h.clientX - B, N = h.clientY - L;
-    n.style.left = `${x + w}px`, n.style.top = `${A + N}px`, n.style.bottom = "auto", n.style.transform = "none";
+    const v = h.clientX - I, L = h.clientY - j;
+    n.style.left = `${x + v}px`, n.style.top = `${A + L}px`, n.style.bottom = "auto", n.style.transform = "none";
   }), n.addEventListener("pointerup", () => {
     y = !1, n.classList.remove("dragging");
   }), n;
@@ -846,21 +846,21 @@ function fe(r, e, t, o) {
   const a = document.createElement("div");
   a.className = "timber-canvas-wrap";
   const i = document.createElement("canvas"), s = i.getContext("2d");
-  let c = "draw", u = "#ef4444", p = !1, g = 0, S = 0, l = null;
+  let c = "draw", u = "#ef4444", p = !1, g = 0, R = 0, l = null;
   const m = [], b = [];
   function y() {
     if (i.width === 0 || i.height === 0) return;
     const d = s.getImageData(0, 0, i.width, i.height);
     m.push(d), m.length > be && m.shift(), b.length = 0;
   }
-  function B() {
+  function I() {
     if (m.length === 0) return;
     const d = s.getImageData(0, 0, i.width, i.height);
     b.push(d);
     const f = m.pop();
     s.putImageData(f, 0, 0);
   }
-  function L() {
+  function j() {
     if (b.length === 0) return;
     const d = s.getImageData(0, 0, i.width, i.height);
     m.push(d);
@@ -870,27 +870,27 @@ function fe(r, e, t, o) {
   const x = new Image();
   x.crossOrigin = "anonymous", x.onload = () => {
     i.width = x.naturalWidth, i.height = x.naturalHeight;
-    const d = window.innerWidth - 32, f = window.innerHeight - 80, v = Math.min(d / x.naturalWidth, f / x.naturalHeight, 1);
-    i.style.width = `${x.naturalWidth * v}px`, i.style.height = `${x.naturalHeight * v}px`, s.drawImage(x, 0, 0);
+    const d = window.innerWidth - 32, f = window.innerHeight - 80, w = Math.min(d / x.naturalWidth, f / x.naturalHeight, 1);
+    i.style.width = `${x.naturalWidth * w}px`, i.style.height = `${x.naturalHeight * w}px`, s.drawImage(x, 0, 0);
   }, x.src = e;
   function A(d) {
-    const f = i.getBoundingClientRect(), v = i.width / f.width, E = i.height / f.height;
-    return [(d.clientX - f.left) * v, (d.clientY - f.top) * E];
+    const f = i.getBoundingClientRect(), w = i.width / f.width, C = i.height / f.height;
+    return [(d.clientX - f.left) * w, (d.clientY - f.top) * C];
   }
   i.addEventListener("pointerdown", (d) => {
-    c === "draw" && (y(), p = !0, [g, S] = A(d), i.setPointerCapture(d.pointerId));
+    c === "draw" && (y(), p = !0, [g, R] = A(d), i.setPointerCapture(d.pointerId));
   }), i.addEventListener("pointermove", (d) => {
     if (!p || c !== "draw") return;
-    const [f, v] = A(d);
-    s.beginPath(), s.moveTo(g, S), s.lineTo(f, v), s.strokeStyle = u, s.lineWidth = 12, s.lineCap = "round", s.lineJoin = "round", s.stroke(), g = f, S = v;
+    const [f, w] = A(d);
+    s.beginPath(), s.moveTo(g, R), s.lineTo(f, w), s.strokeStyle = u, s.lineWidth = 12, s.lineCap = "round", s.lineJoin = "round", s.stroke(), g = f, R = w;
   }), i.addEventListener("pointerup", () => {
     p = !1;
   }), i.addEventListener("click", (d) => {
     if (c !== "text") return;
     h();
-    const [f, v] = A(d), E = i.getBoundingClientRect(), U = i.width / E.width;
-    l = document.createElement("input"), l.type = "text", l.className = "timber-text-input", l.style.left = `${d.clientX - E.left + a.offsetLeft}px`, l.style.top = `${d.clientY - E.top + a.offsetTop}px`, l.style.color = u, l.style.fontSize = `${Math.round(30 / U)}px`, l.dataset.cx = String(f), l.dataset.cy = String(v), l.addEventListener("keydown", (O) => {
-      O.key === "Enter" && h();
+    const [f, w] = A(d), C = i.getBoundingClientRect(), S = i.width / C.width;
+    l = document.createElement("input"), l.type = "text", l.className = "timber-text-input", l.style.left = `${d.clientX - C.left + a.offsetLeft}px`, l.style.top = `${d.clientY - C.top + a.offsetTop}px`, l.style.color = u, l.style.fontSize = `${Math.round(30 / S)}px`, l.dataset.cx = String(f), l.dataset.cy = String(w), l.addEventListener("keydown", (T) => {
+      T.key === "Enter" && h();
     }), a.style.position = "relative", a.appendChild(l), l.focus();
   });
   function h() {
@@ -902,7 +902,7 @@ function fe(r, e, t, o) {
     const d = parseFloat(l.dataset.cx || "0"), f = parseFloat(l.dataset.cy || "0");
     s.font = "bold 30px -apple-system, BlinkMacSystemFont, sans-serif", s.fillStyle = u, s.fillText(l.value, d, f), l.remove(), l = null;
   }
-  const F = ue(r, {
+  const O = ue(r, {
     tool: c,
     color: u
   }, {
@@ -913,10 +913,10 @@ function fe(r, e, t, o) {
       u = d;
     },
     onUndo() {
-      h(), B();
+      h(), I();
     },
     onRedo() {
-      L();
+      j();
     },
     onSend() {
       h();
@@ -927,9 +927,9 @@ function fe(r, e, t, o) {
       t.onCancel();
     }
   });
-  return a.appendChild(i), n.appendChild(a), n.appendChild(F), r.appendChild(n), n;
+  return a.appendChild(i), n.appendChild(a), n.appendChild(O), r.appendChild(n), n;
 }
-const q = '<svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 7 9 12 4"/></svg>', ge = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>', z = 150, D = 150, xe = [
+const X = '<svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 7 9 12 4"/></svg>', ge = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>', D = 150, K = 150, xe = [
   { value: "no_priority", label: "No Priority", color: "#94a3b8" },
   { value: "urgent", label: "Urgent", color: "#ef4444" },
   { value: "high", label: "High", color: "#f97316" },
@@ -950,8 +950,8 @@ function ye(r, e, t, o) {
   p.className = "timber-report-header", p.textContent = "Report a Bug";
   const g = document.createElement("button");
   g.type = "button", g.className = "timber-report-close", g.innerHTML = ge, g.addEventListener("click", () => o.onCancel()), u.appendChild(p), u.appendChild(g), c.appendChild(u);
-  const S = document.createElement("p");
-  S.className = "timber-report-subtitle", S.textContent = "Provide details about the issue so our team can investigate and resolve it quickly.", c.appendChild(S), s.appendChild(c);
+  const R = document.createElement("p");
+  R.className = "timber-report-subtitle", R.textContent = "Provide details about the issue so our team can investigate and resolve it quickly.", c.appendChild(R), s.appendChild(c);
   const l = document.createElement("div");
   l.className = "timber-report-screenshot-section";
   const m = document.createElement("p");
@@ -960,92 +960,92 @@ function ye(r, e, t, o) {
   b.className = "timber-report-thumb", b.src = e, b.alt = "Screenshot preview", l.appendChild(b), s.appendChild(l);
   const y = document.createElement("div");
   y.className = "timber-report-fields";
-  const B = P("Title"), L = G("Enter your Title");
-  B.appendChild(L), y.appendChild(B);
-  const x = Z("Bug Description", z), A = V(
+  const I = G("Title"), j = Z("Enter your Title");
+  I.appendChild(j), y.appendChild(I);
+  const x = V("Bug Description", D), A = $(
     "Please provide more info regarding the current behaviour...",
-    z
+    D
   ), h = x.querySelector(".timber-report-char-count");
   A.addEventListener("input", () => {
-    h.textContent = `${A.value.length}/${z}`, W();
+    h.textContent = `${A.value.length}/${D}`, P();
   }), x.appendChild(A), y.appendChild(x);
-  const w = Z("Expected Behaviour", D), N = V(
+  const v = V("Expected Behaviour", K), L = $(
     "Please provide more info about the expected behaviour...",
-    D
-  ), F = w.querySelector(".timber-report-char-count");
-  N.addEventListener("input", () => {
-    F.textContent = `${N.value.length}/${D}`, W();
-  }), w.appendChild(N), y.appendChild(w);
+    K
+  ), O = v.querySelector(".timber-report-char-count");
+  L.addEventListener("input", () => {
+    O.textContent = `${L.value.length}/${K}`, P();
+  }), v.appendChild(L), y.appendChild(v);
   const d = document.createElement("div");
   d.className = "timber-report-row";
-  const f = P("Priority"), v = document.createElement("div");
-  v.className = "timber-priority-dropdown";
-  const E = document.createElement("button");
-  E.type = "button", E.className = "timber-priority-trigger", E.innerHTML = `<span class="timber-priority-placeholder">Choose Priority</span><span class="timber-priority-chevron">${q}</span>`;
-  const U = document.createElement("div");
-  U.className = "timber-priority-options", U.style.display = "none";
-  for (const C of xe) {
-    const R = document.createElement("button");
-    R.type = "button", R.className = "timber-priority-option", R.innerHTML = `<span class="timber-priority-dot" style="background:${C.color}"></span>${_(C.label)}`, R.addEventListener("click", () => {
-      n = C.value, E.innerHTML = `<span class="timber-priority-trigger-label"><span class="timber-priority-dot" style="background:${C.color}"></span>${_(C.label)}</span><span class="timber-priority-chevron">${q}</span>`, Y(), W();
-    }), U.appendChild(R);
+  const f = G("Priority"), w = document.createElement("div");
+  w.className = "timber-priority-dropdown";
+  const C = document.createElement("button");
+  C.type = "button", C.className = "timber-priority-trigger", C.innerHTML = `<span class="timber-priority-placeholder">Choose Priority</span><span class="timber-priority-chevron">${X}</span>`;
+  const S = document.createElement("div");
+  S.className = "timber-priority-options", S.style.display = "none";
+  for (const E of xe) {
+    const M = document.createElement("button");
+    M.type = "button", M.className = "timber-priority-option", M.innerHTML = `<span class="timber-priority-dot" style="background:${E.color}"></span>${_(E.label)}`, M.addEventListener("click", () => {
+      n = E.value, C.innerHTML = `<span class="timber-priority-trigger-label"><span class="timber-priority-dot" style="background:${E.color}"></span>${_(E.label)}</span><span class="timber-priority-chevron">${X}</span>`, W(), P();
+    }), S.appendChild(M);
   }
-  E.addEventListener("click", () => {
-    a = !a, U.style.display = a ? "" : "none";
-    const C = E.querySelector(".timber-priority-chevron");
-    C == null || C.classList.toggle("open", a);
-  }), v.appendChild(E), v.appendChild(U), f.appendChild(v), d.appendChild(f);
-  const O = P("Device"), $ = G("Enter the Device");
-  $.value = we(), O.appendChild($), d.appendChild(O), y.appendChild(d), s.appendChild(y);
-  const I = document.createElement("div");
-  I.className = "timber-report-error", I.style.display = "none", s.appendChild(I);
-  const j = document.createElement("div");
-  j.className = "timber-report-buttons";
-  const M = document.createElement("button");
-  M.type = "button", M.className = "timber-report-cancel", M.textContent = "Cancel", M.addEventListener("click", () => o.onCancel());
-  const T = document.createElement("button");
-  T.type = "button", T.className = "timber-report-submit", T.textContent = "Report a Bug", T.disabled = !0, T.addEventListener("click", () => {
-    X() && o.onSubmit({
-      title: L.value.trim(),
+  C.addEventListener("click", () => {
+    a = !a, S.style.display = a ? "" : "none";
+    const E = C.querySelector(".timber-priority-chevron");
+    E == null || E.classList.toggle("open", a);
+  }), w.appendChild(C), w.appendChild(S), f.appendChild(w), d.appendChild(f);
+  const T = G("Device"), U = Z("Enter the Device");
+  U.value = ve(), T.appendChild(U), d.appendChild(T), y.appendChild(d), s.appendChild(y);
+  const H = document.createElement("div");
+  H.className = "timber-report-error", H.style.display = "none", s.appendChild(H);
+  const F = document.createElement("div");
+  F.className = "timber-report-buttons";
+  const N = document.createElement("button");
+  N.type = "button", N.className = "timber-report-cancel", N.textContent = "Cancel", N.addEventListener("click", () => o.onCancel());
+  const B = document.createElement("button");
+  B.type = "button", B.className = "timber-report-submit", B.textContent = "Report a Bug", B.disabled = !0, B.addEventListener("click", () => {
+    Y() && o.onSubmit({
+      title: j.value.trim(),
       description: A.value.trim(),
-      expectedBehaviour: N.value.trim(),
+      expectedBehaviour: L.value.trim(),
       priority: n,
-      device: $.value.trim()
+      device: U.value.trim()
     });
-  }), j.appendChild(M), j.appendChild(T), s.appendChild(j), i.appendChild(s), r.appendChild(i), L.addEventListener("input", () => W()), i.addEventListener("click", (C) => {
-    a && !v.contains(C.target) && Y();
-  }), requestAnimationFrame(() => L.focus());
-  function Y() {
-    a = !1, U.style.display = "none";
-    const C = E.querySelector(".timber-priority-chevron");
-    C == null || C.classList.remove("open");
-  }
-  function X() {
-    return L.value.trim().length > 0 && A.value.trim().length > 0 && N.value.trim().length > 0 && n !== null;
-  }
+  }), F.appendChild(N), F.appendChild(B), s.appendChild(F), i.appendChild(s), r.appendChild(i), j.addEventListener("input", () => P()), i.addEventListener("click", (E) => {
+    a && !w.contains(E.target) && W();
+  }), requestAnimationFrame(() => j.focus());
   function W() {
-    T.disabled = !X();
+    a = !1, S.style.display = "none";
+    const E = C.querySelector(".timber-priority-chevron");
+    E == null || E.classList.remove("open");
+  }
+  function Y() {
+    return j.value.trim().length > 0 && A.value.trim().length > 0 && L.value.trim().length > 0 && n !== null;
+  }
+  function P() {
+    B.disabled = !Y();
   }
   return i;
 }
-function K(r, e) {
+function z(r, e) {
   const t = r.querySelector(".timber-report-error");
   t && (t.textContent = e, t.style.display = e ? "" : "none");
 }
-function Q(r, e) {
+function q(r, e) {
   const t = r.querySelector(".timber-report-submit");
   if (!t) return;
   e ? (t.disabled = !0, t.innerHTML = '<span class="timber-report-submit-spinner"></span>Sending...') : (t.disabled = !1, t.textContent = "Report a Bug");
   const o = r.querySelector(".timber-report-cancel");
   o && (o.style.display = e ? "none" : "");
 }
-function P(r) {
+function G(r) {
   const e = document.createElement("div");
   e.className = "timber-report-field";
   const t = document.createElement("label");
   return t.className = "timber-report-label", t.textContent = r, e.appendChild(t), e;
 }
-function Z(r, e) {
+function V(r, e) {
   const t = document.createElement("div");
   t.className = "timber-report-field";
   const o = document.createElement("div");
@@ -1055,15 +1055,15 @@ function Z(r, e) {
   const a = document.createElement("span");
   return a.className = "timber-report-char-count", a.textContent = `0/${e}`, o.appendChild(n), o.appendChild(a), t.appendChild(o), t;
 }
-function G(r) {
+function Z(r) {
   const e = document.createElement("input");
   return e.type = "text", e.className = "timber-report-input", e.placeholder = r, e;
 }
-function V(r, e) {
+function $(r, e) {
   const t = document.createElement("textarea");
   return t.className = "timber-report-textarea", t.placeholder = r, t.maxLength = e, t;
 }
-function we() {
+function ve() {
   const r = navigator.userAgent;
   let e = "Unknown", t = "Unknown";
   return r.includes("Firefox/") ? e = "Firefox" : r.includes("Edg/") ? e = "Edge" : r.includes("Chrome/") ? e = "Chrome" : r.includes("Safari/") && (e = "Safari"), r.includes("Mac OS") ? t = "macOS" : r.includes("Windows") ? t = "Windows" : r.includes("Linux") ? t = "Linux" : r.includes("Android") ? t = "Android" : (r.includes("iPhone") || r.includes("iPad")) && (t = "iOS"), `${e} on ${t}`;
@@ -1071,7 +1071,7 @@ function we() {
 function _(r) {
   return r.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
-class ve {
+class we {
   constructor(e) {
     this.state = "idle", this.floatBtn = null, this.menuEl = null, this.loaderEl = null, this.annotationEl = null, this.reportEl = null, this.screenshotObjectUrl = null, this.screenshotDataUrl = null, this.config = e, this.host = document.createElement("div"), this.host.setAttribute("data-timber-root", ""), this.host.style.cssText = "position:fixed;z-index:2147483647;top:0;left:0;width:0;height:0;overflow:visible;", document.body.appendChild(this.host), this.shadow = this.host.attachShadow({ mode: "open" });
     const t = document.createElement("style");
@@ -1144,7 +1144,7 @@ class ve {
   async handleSubmitReport(e) {
     var a, i;
     if (!this.reportEl) return;
-    K(this.reportEl, ""), Q(this.reportEl, !0);
+    z(this.reportEl, ""), q(this.reportEl, !0);
     const t = this.logCapture.getLogs(), o = [];
     if (this.screenshotDataUrl) {
       const s = this.screenshotDataUrl.split(",")[1];
@@ -1190,7 +1190,7 @@ Expected behaviour: ${e.expectedBehaviour}`,
       this.screenshotObjectUrl && (URL.revokeObjectURL(this.screenshotObjectUrl), this.screenshotObjectUrl = null), this.screenshotDataUrl = null, this.transitionTo("idle");
     } catch (s) {
       const c = s instanceof Error ? s.message : "Failed to send report";
-      console.error("[Timber] Submit failed:", c), this.reportEl && (Q(this.reportEl, !1), K(this.reportEl, c));
+      console.error("[Timber] Submit failed:", c), this.reportEl && (q(this.reportEl, !1), z(this.reportEl, c));
     }
   }
   /** Remove any state-specific UI elements */
@@ -1213,11 +1213,11 @@ Expected behaviour: ${e.expectedBehaviour}`,
   }
 }
 let k = null;
-function Ce(r) {
+function Ee(r) {
   var e;
   return r === "light" || r === "dark" ? r : typeof window < "u" && ((e = window.matchMedia) != null && e.call(window, "(prefers-color-scheme: dark)").matches) ? "dark" : "light";
 }
-function Ee(r) {
+function Ce(r) {
   if (!(r != null && r.projectId))
     throw new Error("[Timber] projectId is required");
   if (!(r != null && r.apiKey))
@@ -1230,15 +1230,15 @@ function Ee(r) {
     screenshotMode: r.screenshotMode ?? "native",
     screenshotApiUrl: r.screenshotApiUrl ?? "/api/timber/screenshot",
     position: r.position ?? "bottom-right",
-    theme: Ce(r.theme ?? "auto"),
+    theme: Ee(r.theme ?? "auto"),
     user: r.user
   };
-  k = new ve(e);
+  k = new we(e);
 }
 function ke() {
   k && (k.destroy(), k = null);
 }
-function Se() {
+function Re() {
   k == null || k.open();
 }
 function Ae() {
@@ -1247,7 +1247,7 @@ function Ae() {
 export {
   Ae as close,
   ke as destroy,
-  Ee as init,
-  Se as open
+  Ce as init,
+  Re as open
 };
 //# sourceMappingURL=index.mjs.map

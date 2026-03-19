@@ -5,7 +5,7 @@ Bug reporting widget for web applications. Adds a floating button that lets user
 ## Features
 
 - **Floating button** — draggable Timber logo in the corner of the page
-- **Screenshot capture** — serializes the DOM and renders a pixel-perfect PNG via a server-side Playwright route
+- **Native screenshot capture** — uses the browser's Screen Capture API (`getDisplayMedia`) with zero server-side setup
 - **Annotation tools** — freehand draw, text tool, 6-color palette, undo/redo
 - **Bug report form** — title, description, expected behaviour, priority, device info
 - **Console log capture** — silently records the last 200 console/click events and attaches them to the report
@@ -18,20 +18,11 @@ Bug reporting widget for web applications. Adds a floating button that lets user
 
 ### 1. Install
 
-Install directly from the public GitHub repo:
-
 ```bash
 npm install github:Justin-Beavers-Dev/timber-web-sdk
 ```
 
-To pin a specific commit or tag:
-
-```bash
-npm install github:Justin-Beavers-Dev/timber-web-sdk#main
-npm install github:Justin-Beavers-Dev/timber-web-sdk#v0.1.0
-```
-
-Or add it to your `package.json` manually:
+Or add it to your `package.json`:
 
 ```json
 {
@@ -39,16 +30,6 @@ Or add it to your `package.json` manually:
     "timber-feedback-sdk": "github:Justin-Beavers-Dev/timber-web-sdk"
   }
 }
-```
-
-For local development against the SDK source:
-
-```bash
-# From the SDK repo — build and pack
-npm run build && npm pack
-
-# From your web app — install the local tarball
-npm install ../timber-web-sdk/timber-feedback-sdk-0.1.0.tgz
 ```
 
 ### 2. Get your credentials
@@ -60,50 +41,9 @@ You need two values from your Timber project:
 | **Project ID** | Timber dashboard → project settings → copy the project UUID |
 | **SDK API Key** | Timber dashboard → project settings → SDK Keys → create or copy an existing key |
 
-### 3. Add the screenshot API route
+### 3. Initialize the SDK
 
-The SDK captures the page DOM and sends it to a server-side route that renders a PNG using Playwright. You need to add this route to your app.
-
-Install Playwright:
-
-```bash
-npm install playwright
-npx playwright install chromium
-```
-
-Create the route (Next.js App Router example):
-
-```ts
-// app/api/timber/screenshot/route.ts
-import { chromium } from "playwright";
-import { NextRequest, NextResponse } from "next/server";
-
-export async function POST(req: NextRequest): Promise<NextResponse> {
-  const { url, headHtml, bodyHtml, width, height, deviceScaleFactor } =
-    await req.json();
-
-  const browser = await chromium.launch();
-  const context = await browser.newContext({
-    viewport: { width, height },
-    deviceScaleFactor,
-  });
-  const page = await context.newPage();
-
-  await page.setContent(
-    `<!DOCTYPE html><html><head><base href="${url}">${headHtml}</head><body>${bodyHtml}</body></html>`,
-    { waitUntil: "networkidle" }
-  );
-
-  const screenshot = await page.screenshot({ type: "png", fullPage: false });
-  await browser.close();
-
-  return new NextResponse(screenshot, {
-    headers: { "Content-Type": "image/png" },
-  });
-}
-```
-
-### 4. Initialize the SDK
+That's it — no server-side routes or Playwright setup needed. The SDK captures screenshots natively in the browser.
 
 #### React / Next.js (App Router)
 
@@ -122,7 +62,6 @@ export function TimberWidget() {
         projectId: "YOUR_PROJECT_ID",
         apiKey: "YOUR_SDK_API_KEY",
         apiUrl: "https://www.timber.report/api/v1",
-        screenshotApiUrl: "/api/timber/screenshot",
         position: "bottom-right",
         theme: "auto",
       });
@@ -164,7 +103,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     projectId: "YOUR_PROJECT_ID",
     apiKey: "YOUR_SDK_API_KEY",
     apiUrl: "https://www.timber.report/api/v1",
-    screenshotApiUrl: "/api/timber/screenshot",
   });
 </script>
 ```
@@ -179,7 +117,8 @@ init({
 
   // Optional
   apiUrl?: string,            // Backend URL — default: "https://www.timber.report/api/v1"
-  screenshotApiUrl?: string,  // Screenshot route — default: "/api/timber/screenshot"
+  screenshotMode?: "native" | "api",  // Capture method — default: "native"
+  screenshotApiUrl?: string,  // Only for "api" mode — default: "/api/timber/screenshot"
   position?: "bottom-right" | "bottom-left",  // Float button position — default: "bottom-right"
   theme?: "light" | "dark" | "auto",          // Widget theme — default: "auto"
   user?: {                    // Pre-fill user info on reports
@@ -189,6 +128,15 @@ init({
   },
 })
 ```
+
+### Screenshot modes
+
+| Mode | How it works | Setup required |
+|---|---|---|
+| `"native"` (default) | Uses the browser's Screen Capture API (`getDisplayMedia`). A share dialog appears and the user selects the current tab. | None |
+| `"api"` | Serializes the DOM and sends it to a server-side endpoint that renders a PNG with Playwright. | Requires a hosted screenshot route and `screenshotApiUrl` |
+
+For most use cases, the default `"native"` mode is recommended — it requires zero server-side setup and produces pixel-perfect captures.
 
 ## Programmatic API
 
@@ -205,10 +153,11 @@ destroy();       // Remove the widget and restore console
 
 1. **Click** the floating Timber button in the corner
 2. **Select** "Take a Screenshot" from the menu
-3. **Annotate** the screenshot — draw, add text, pick colors, undo/redo
-4. **Click "Report"** to open the bug report form
-5. **Fill in** title, description, expected behaviour, priority, and device
-6. **Submit** — the SDK sends the report with screenshot + console logs to Timber
+3. **Share** the current tab when the browser dialog appears
+4. **Annotate** the screenshot — draw, add text, pick colors, undo/redo
+5. **Click "Report"** to open the bug report form
+6. **Fill in** title, description, expected behaviour, priority, and device
+7. **Submit** — the SDK sends the report with screenshot + console logs to Timber
 
 ## Privacy & Masking
 
@@ -218,13 +167,14 @@ Add `data-timber-mask` to any HTML element to redact its content from screenshot
 <div data-timber-mask>This content will appear as [masked] in screenshots</div>
 ```
 
-The SDK automatically excludes its own UI from screenshots via `[data-timber-root]`.
+The SDK automatically hides its own UI during screenshot capture.
 
 ## Architecture
 
 - **Vanilla TypeScript** — zero runtime dependencies
 - **Shadow DOM** — complete style isolation from the host app
 - **State machine** — `idle → menu → capturing → annotating → reporting → idle`
+- **Native capture** — `getDisplayMedia` with `preferCurrentTab` for seamless tab screenshots
 - **Console capture** — intercepts `console.log/warn/error` + click events (200-event ring buffer)
 - **Undo/redo** — canvas `ImageData` snapshot history (max 30 states)
 - **Backend auth** — reports are sent with `X-API-Key` header to `/api/v1/sdk/ingest`
@@ -245,11 +195,4 @@ npm install
 npm run build      # Type-check + Vite build
 npm run typecheck  # Type-check only
 npm run dev        # Vite dev server (for testing)
-```
-
-After making changes, rebuild and update the consuming app:
-
-```bash
-npm run build && npm pack
-cd ../your-app && npm install ../timber-web-sdk/timber-feedback-sdk-0.1.0.tgz
 ```
